@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    //    buat ngetes doang, kode asli di menuWisata
     RecyclerView listRecyclerView;
     listAdapter listAdapter;
     ImageView asu;
@@ -18,8 +19,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //    ganti ke activity_main dulu
         setContentView(R.layout.activity_menu_wisata);
 
+        //    buat ngetes doang, kode asli di menuWisata
         asu = findViewById(R.id.imageView);
         listRecyclerView = findViewById(R.id.recyclerView);
         listRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -27,9 +30,52 @@ public class MainActivity extends AppCompatActivity {
         listRecyclerView.setAdapter(listAdapter);
     }
 
+    //    buat ngetes doang, kode asli di menuWisata
     private ArrayList<listModel> getList() {
         ArrayList<listModel> models = new ArrayList<>();
         listModel m = new listModel();
+        m.setImg(R.drawable.wisata1);
+        m.setTitle("Gunung Bromo");
+        m.setRating("4.7");
+        m.setDesc("Gunung Bromo adalah sebuah gunung berapi aktif yang  terkenal sebagai objek wisata utama di Jawa Timur.");
+        models.add(m);
+
+        m = new listModel();
+        m.setImg(R.drawable.wisata2);
+        m.setTitle("Pantai Tiga Warnah");
+        m.setRating("4.3");
+        m.setDesc("Pantai Tiga Warna adalah pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
+        models.add(m);
+
+        m = new listModel();
+        m.setImg(R.drawable.wisata3);
+        m.setTitle("Candi Badut");
+        m.setRating("4.3");
+        m.setDesc("Candi Badut adalah sebuah candi yang terletak di kawasan Tidar, di bagian barat kota Malang.");
+        models.add(m);
+
+        m = new listModel();
+        m.setImg(R.drawable.wisata1);
+        m.setTitle("Gunung Bromo");
+        m.setRating("4.7");
+        m.setDesc("Gunung Bromo adalah sebuah gunung berapi aktif yang  terkenal sebagai objek wisata utama di Jawa Timur.");
+        models.add(m);
+
+        m = new listModel();
+        m.setImg(R.drawable.wisata2);
+        m.setTitle("Pantai Tiga Warnah");
+        m.setRating("4.3");
+        m.setDesc("Pantai Tiga Warna adalah pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
+        models.add(m);
+
+        m = new listModel();
+        m.setImg(R.drawable.wisata3);
+        m.setTitle("Candi Badut");
+        m.setRating("4.3");
+        m.setDesc("Candi Badut adalah sebuah candi yang terletak di kawasan Tidar, di bagian barat kota Malang.");
+        models.add(m);
+
+        m = new listModel();
         m.setImg(R.drawable.wisata1);
         m.setTitle("Gunung Bromo");
         m.setRating("4.7");
