@@ -29,35 +29,41 @@
             android:textColor="#000"
             android:textSize="14sp" />
 
-        <ImageView
-            android:id="@+id/cardStar"
-            android:layout_width="8dp"
-            android:layout_height="8dp"
-            android:layout_below="@id/cardTitle"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="2dp"
-            android:layout_toEndOf="@id/cardImg"
-            android:src="@drawable/ic_star" />
-
-        <TextView
-            android:id="@+id/cardRating"
+        <RelativeLayout
+            android:id="@+id/ratingContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/cardTitle"
-            android:layout_marginStart="2dp"
-            android:layout_toEndOf="@id/cardStar"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="0.0"
-            android:textColor="#EFBE05"
-            android:textSize="8sp" />
+            android:layout_toEndOf="@id/cardImg"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/cardStar"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_star"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/cardRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/cardStar"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="0.0"
+                android:textColor="#EFBE05"
+                android:textSize="12sp" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/cardDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cardRating"
+            android:layout_below="@id/ratingContainer"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="11dp"
             android:layout_toEndOf="@id/cardImg"
             android:fontFamily="@font/poppins"

@@ -13,8 +13,12 @@
         <entry key="..\:/Kuliah/Semester5/Code/PAPB/Atasiwirapp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/activity_menu_wisata.xml" value="0.22" />
+<<<<<<< HEAD
         <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/list_wisata.xml" value="0.33" />
 >>>>>>> 7728ddf0e2d7c1a2152b041c24ec959c9312ef93
+=======
+        <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/list_wisata.xml" value="0.67" />
+>>>>>>> 5850fb7b3d6059b30d095f5ce09203d42f300eec
       </map>
     </option>
   </component>
