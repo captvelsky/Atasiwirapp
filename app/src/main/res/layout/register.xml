@@ -13,7 +13,7 @@
         android:text="Daftar"
         android:textColor="#0F88C5"
         android:textSize="40dp"
-        app:fontFamily="sans-serif-medium"
+        app:fontFamily="@font/poppins_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,8 +64,9 @@
         android:layout_marginTop="48dp"
         android:text="Nama lengkap"
         android:textColor="#000000"
+        app:fontFamily="@font/poppins"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_masuk_register" />
 
@@ -76,8 +77,9 @@
         android:layout_marginTop="16dp"
         android:text="Email"
         android:textColor="#000000"
+        app:fontFamily="@font/poppins"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintHorizontal_bias="0.219"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_nama_register" />
 
@@ -88,6 +90,7 @@
         android:layout_marginTop="16dp"
         android:text="Password"
         android:textColor="#000000"
+        app:fontFamily="@font/poppins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,6 +104,7 @@
         android:background="#46B3E6"
         android:text="Daftar"
         android:textColor="#ffffff"
+        app:fontFamily="@font/poppins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_password_register"
