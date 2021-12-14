@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_review);
-        //main activity dipake buat nyoba review dulu layoutnya
+        setContentView(R.layout.landingpage);
+
+        asu = findViewById(R.id.imageView);
     }
 }
