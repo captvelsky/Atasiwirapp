@@ -40,7 +40,7 @@ public class MenuWisata extends AppCompatActivity {
         m.setImg(R.drawable.wisata2);
         m.setTitle("Pantai Tiga Warnah");
         m.setRating("4.3");
-        m.setDesc("Pantai Tiga Warna adalah pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
+        m.setDesc("Pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
         models.add(m);
 
         m = new wisataModel();
@@ -61,7 +61,7 @@ public class MenuWisata extends AppCompatActivity {
         m.setImg(R.drawable.wisata2);
         m.setTitle("Pantai Tiga Warnah");
         m.setRating("4.3");
-        m.setDesc("Pantai Tiga Warna adalah pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
+        m.setDesc("Pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
         models.add(m);
 
         m = new wisataModel();
@@ -82,7 +82,7 @@ public class MenuWisata extends AppCompatActivity {
         m.setImg(R.drawable.wisata2);
         m.setTitle("Pantai Tiga Warnah");
         m.setRating("4.3");
-        m.setDesc("Pantai Tiga Warna adalah pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
+        m.setDesc("Pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
         models.add(m);
 
         m = new wisataModel();

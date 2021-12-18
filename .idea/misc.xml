@@ -34,6 +34,12 @@
         <entry key="..\:/Kuliah/Semester5/Code/PAPB/Atasiwirapp/app/src/main/res/layout/login.xml" value="0.264" />
         <entry key="..\:/Kuliah/Semester5/Code/PAPB/Atasiwirapp/app/src/main/res/layout/register.xml" value="0.264" />
         <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+<<<<<<< HEAD
+=======
+        <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/activity_menu_wisata.xml" value="0.25" />
+        <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/activity_wisata.xml" value="0.22" />
+        <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/layout_wisata.xml" value="0.598705501618123" />
+>>>>>>> 66472ee485e2efab6cb0500ff1d069fb030d943c
       </map>
     </option>
   </component>

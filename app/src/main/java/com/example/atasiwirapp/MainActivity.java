@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view.getId() == _btnLandingLogin.getId()) {
-            Intent login = new Intent(this, Login.class);
+            Intent login = new Intent(this, MenuWisata.class);
             startActivity(login);
         } else if (view.getId() == _btnLandingRegister.getId()) {
             Intent register = new Intent(this, Register.class);
