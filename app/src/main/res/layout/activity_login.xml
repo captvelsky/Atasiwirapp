@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+<TextView
+        android:id="@+id/tvLoginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masuk"
+        android:textColor="#0F88C5"
+        android:textSize="40sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toTopOf="@+id/txtLoginEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLoginEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="89dp"
+        android:text="Email"
+        android:textColor="#000000"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintStart_toStartOf="@+id/txtLoginEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
+
+    <EditText
+        android:id="@+id/txtLoginEmail"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginEmail"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/txtLoginPassword"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginPassword"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tvLoginPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Kata sandi"
+        android:textColor="#000000"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintStart_toStartOf="@+id/txtLoginPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoginEmail" />
+
+    <TextView
+        android:id="@+id/txtLoginForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Lupa kata sandi?"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintEnd_toEndOf="@+id/txtLoginPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoginPassword" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/bg_btn_blue"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Masuk"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoginForgotPassword"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvLoginRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Belum punya akun?"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintBottom_toBottomOf="@+id/txtLoginRegister"
+        app:layout_constraintEnd_toStartOf="@+id/txtLoginRegister"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintTop_toTopOf="@+id/txtLoginRegister" />
+
+    <TextView
+        android:id="@+id/txtLoginRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="48dp"
+        android:text="Daftar"
+        android:textColor="#0F88C5"
+        android:textSize="12sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvLoginRegister"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

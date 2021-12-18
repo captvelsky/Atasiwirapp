@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddReview">
+
+    <TextView
+        android:id="@+id/tvAddReviewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Beri Ulasan"
+        android:textColor="#0F88C5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RatingBar
+        android:id="@+id/rbAddReviewRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:progressTint="#FFCB05"
+        android:stepSize="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/txtAddReviewName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddReviewDesc" />
+
+    <TextView
+        android:id="@+id/tvAddReviewWisataName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Gunung Bromo"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddReviewDesc"
+        app:layout_constraintEnd_toEndOf="@+id/tvAddReviewTitle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tvAddReviewTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddReviewTitle"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvAddReviewDesc"
+        android:layout_width="260dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:text="Ceritakan kepada kami pengalaman berkunjung Anda di tempat ini!"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rbAddReviewRating"
+        app:layout_constraintEnd_toEndOf="@+id/tvAddReviewWisataName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tvAddReviewWisataName"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddReviewWisataName" />
+
+    <EditText
+        android:id="@+id/txtAddReviewDesc"
+        android:layout_width="330dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="top"
+        android:hint="Tuliskan alasan anda"
+        android:inputType="textMultiLine"
+        android:padding="8dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmitReview"
+        app:layout_constraintEnd_toEndOf="@+id/txtAddReviewName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtAddReviewName"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddReviewName" />
+
+    <Button
+        android:id="@+id/btnSubmitReview"
+        android:layout_width="330dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_btn_blue"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Kirim"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtAddReviewDesc"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtAddReviewDesc"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddReviewDesc" />
+
+    <EditText
+        android:id="@+id/txtAddReviewName"
+        android:layout_width="330dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="Tuliskan nama anda"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtAddReviewDesc"
+        app:layout_constraintEnd_toEndOf="@+id/rbAddReviewRating"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/rbAddReviewRating"
+        app:layout_constraintTop_toBottomOf="@+id/rbAddReviewRating" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

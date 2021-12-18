@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvComingSoon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Fitur sedang dibuat"
+        android:textColor="#46B3E6"
+        android:textSize="24sp"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvComingSoon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tvComingSoon"
+        app:layout_constraintTop_toBottomOf="@+id/tvComingSoon" />
+
+    <TextView
+        android:id="@+id/tvComingSoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Akan Datang"
+        android:textColor="#0F88C5"
+        android:textSize="40sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toTopOf="@+id/tvComingSoon2"
+        app:layout_constraintEnd_toEndOf="@+id/imgComingSoon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/imgComingSoon"
+        app:layout_constraintTop_toBottomOf="@+id/imgComingSoon" />
+
+    <ImageView
+        android:id="@+id/imgComingSoon"
+        android:layout_width="208dp"
+        android:layout_height="216dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvComingSoon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/img_coming_soon" />
+</androidx.constraintlayout.widget.ConstraintLayout>
