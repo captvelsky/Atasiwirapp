@@ -108,13 +108,14 @@
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/bromo" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvReview"
-            android:layout_width="330dp"
+            android:layout_width="348dp"
             android:layout_height="240dp"
             android:layout_marginTop="18dp"
             app:layout_constraintEnd_toEndOf="parent"

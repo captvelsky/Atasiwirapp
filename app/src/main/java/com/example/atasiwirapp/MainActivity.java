@@ -7,9 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button _btnLandingLogin, _btnLandingRegister;
+    FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +26,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         _btnLandingLogin.setOnClickListener(this);
         _btnLandingRegister.setOnClickListener(this);
+
+        // If user already login, redirect user to home
+        currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            if(currentUser.isEmailVerified()){
+                Intent home = new Intent(this, MenuWisata.class);
+                startActivity(home);
+            }
+        }
     }
 
     @Override

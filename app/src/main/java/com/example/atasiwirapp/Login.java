@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    FirebaseUser currentUser;
 
     EditText _txtLoginEmail, _txtLoginPassword;
     TextView _txtLoginRegister;
@@ -40,14 +39,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         _txtLoginRegister.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
-        // If user already login, redirect user to home
-        currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            if(currentUser.isEmailVerified()){
-//                Intent home = new Intent(this, Home.class);
-//                startActivity(home);
-            }
-        }
     }
 
     @Override
@@ -63,8 +54,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         if (user != null) {
                                             if (user.isEmailVerified()) {
-//                                                Intent home = new Intent(Login.this, Home.class);
-//                                                startActivity(home);
+                                                Intent home = new Intent(Login.this, MenuWisata.class);
+                                                startActivity(home);
                                             } else {
                                                 Toast.makeText(Login.this, "Not verified", Toast.LENGTH_LONG).show();
                                             }
