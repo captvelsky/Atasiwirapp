@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.atasiwirapp.rv_review.reviewAdapter;
 import com.example.atasiwirapp.rv_review.reviewModel;
@@ -28,6 +29,7 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
     Button _btnAddReview;
     ImageButton _btnReviewBack;
     DatabaseReference mDatabase;
+    TextView _wTitle, _wRating,_wDesc;
 
     ArrayList<reviewModel> models = new ArrayList<>();
 
@@ -36,12 +38,25 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wisata);
 
+        _wTitle = findViewById(R.id.tvWisataName);
+        _wRating = findViewById(R.id.tvWisataRating);
+        _wDesc = findViewById(R.id.tvWisataDesc);
+
         _rvReview = findViewById(R.id.rvReview);
         _rvReview.setLayoutManager(new LinearLayoutManager(this));
         _rvReview.setAdapter(reviewAdapter);
 
         _btnAddReview = findViewById(R.id.btnAddReview);
         _btnAddReview.setOnClickListener(this);
+
+        Intent intent = getIntent();
+        String iTitle = intent.getStringExtra("wTitle");
+        String iRating = intent.getStringExtra("wRating");
+        String iDesc = intent.getStringExtra("wDesc");
+
+        _wTitle.setText(iTitle);
+        _wRating.setText(iRating);
+        _wDesc.setText(iDesc);
 
         mDatabase = FirebaseDatabase.getInstance().getReference("review");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
