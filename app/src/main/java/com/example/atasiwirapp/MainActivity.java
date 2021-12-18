@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         _btnLandingRegister.setOnClickListener(this);
 
         // If user already login, redirect user to home
+        mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             if(currentUser.isEmailVerified()){
