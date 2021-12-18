@@ -12,18 +12,18 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/cardImg"
+            android:id="@+id/imgMenuWisataPic"
             android:layout_width="120dp"
             android:layout_height="92dp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/cardTitle"
+            android:id="@+id/wisataTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="11dp"
-            android:layout_toEndOf="@id/cardImg"
+            android:layout_toEndOf="@id/imgMenuWisataPic"
             android:fontFamily="@font/poppins_semibold"
             android:text="Title"
             android:textColor="#000"
@@ -33,24 +33,24 @@
             android:id="@+id/ratingContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cardTitle"
-            android:layout_toEndOf="@id/cardImg"
+            android:layout_below="@id/wisataTitle"
+            android:layout_toEndOf="@id/imgMenuWisataPic"
             android:layout_marginStart="10dp">
 
             <ImageView
-                android:id="@+id/cardStar"
+                android:id="@+id/imgMenuWisataStar"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
                 android:src="@drawable/ic_star"
                 android:layout_centerVertical="true"/>
 
             <TextView
-                android:id="@+id/cardRating"
+                android:id="@+id/wisataRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginTop="2dp"
-                android:layout_toEndOf="@id/cardStar"
+                android:layout_toEndOf="@id/imgMenuWisataStar"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="0.0"
                 android:textColor="#EFBE05"
@@ -58,14 +58,14 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/cardDesc"
+            android:id="@+id/wisataDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ratingContainer"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="11dp"
-            android:layout_toEndOf="@id/cardImg"
+            android:layout_toEndOf="@id/imgMenuWisataPic"
             android:fontFamily="@font/poppins"
             android:text="description"
             android:textColor="#000"

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context=".Wisata">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnAddReview"
+            android:layout_width="330dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/bg_btn_blue"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Beri Ulasan"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvWisataDesc"
+            app:layout_constraintStart_toStartOf="@+id/tvWisataDesc"
+            app:layout_constraintTop_toBottomOf="@+id/rvReview" />
+
+        <ImageView
+            android:id="@+id/imgWisataContainer"
+            android:layout_width="432dp"
+            android:layout_height="228dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWisataGmaps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgWisataPic"
+            app:srcCompat="@drawable/shadow_container" />
+
+        <TextView
+            android:id="@+id/tvWisataName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Gunung Bromo"
+            android:textColor="#000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/imgWisataPic"
+            app:layout_constraintTop_toBottomOf="@+id/imgWisataPic" />
+
+        <TextView
+            android:id="@+id/tvWisataGmaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Buka di Google Maps"
+            android:textColor="#46B3E6"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/tvWisataDesc"
+            app:layout_constraintTop_toBottomOf="@+id/tvWisataDesc" />
+
+        <TextView
+            android:id="@+id/tvWisataDesc"
+            android:layout_width="352dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/poppins"
+            android:text="Gunung Bromo adalah sebuah gunung berapi aktif yang  terkenal sebagai objek wisata utama di Jawa Timur."
+            android:textColor="#000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imgWisataPic"
+            app:layout_constraintStart_toStartOf="@+id/imgWisataPic"
+            app:layout_constraintTop_toBottomOf="@+id/tvWisataRating" />
+
+        <TextView
+            android:id="@+id/tvWisataRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="4.7"
+            android:textColor="#EFBE05"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/imgWisataStar"
+            app:layout_constraintTop_toBottomOf="@+id/tvWisataName" />
+
+        <ImageView
+            android:id="@+id/imgWisataStar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            app:layout_constraintStart_toStartOf="@+id/tvWisataName"
+            app:layout_constraintTop_toBottomOf="@+id/tvWisataName"
+            app:srcCompat="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/imgWisataPic"
+            android:layout_width="418dp"
+            android:layout_height="251dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bromo" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvReview"
+            android:layout_width="330dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvWisataReviewTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvWisataReviewTitle" />
+
+        <TextView
+            android:id="@+id/tvWisataReviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins"
+            android:text="Ulasan"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvWisataGmaps"
+            app:layout_constraintTop_toBottomOf="@+id/imgWisataContainer" />
+
+        <ImageButton
+            android:id="@+id/btnWisataBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="@+id/imgWisataPic"
+            app:layout_constraintTop_toTopOf="@+id/imgWisataPic"
+            app:srcCompat="@drawable/btn_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

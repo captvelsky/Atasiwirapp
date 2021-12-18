@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+
+    <TextView
+        android:id="@+id/tvRegisterAgreement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="Saya setuju dengan"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintBottom_toBottomOf="@+id/txtRegisterTerms"
+        app:layout_constraintEnd_toStartOf="@+id/txtRegisterTerms"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnRegister"
+        app:layout_constraintTop_toTopOf="@+id/txtRegisterTerms" />
+
+    <TextView
+        android:id="@+id/txtRegisterTerms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:text="Syarat &amp; Ketentuan"
+        android:textColor="#0F88C5"
+        android:textSize="12sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvRegisterAgreement"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+    <TextView
+        android:id="@+id/tvRegisterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daftar"
+        android:textColor="#0F88C5"
+        android:textSize="40dp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toTopOf="@+id/tvRegisterEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/txtRegisterEmail"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvRegisterPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterEmail"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/txtRegisterPassword"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvRegisterConfirmPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterPassword"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/txtRegisterConfirmPassword"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterConfirmPassword"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tvRegisterEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="89dp"
+        android:text="Email"
+        android:textColor="#000000"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintBottom_toTopOf="@+id/txtRegisterEmail"
+        app:layout_constraintStart_toStartOf="@+id/txtRegisterEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterTitle" />
+
+    <TextView
+        android:id="@+id/tvRegisterPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Kata Sandi"
+        android:textColor="#000000"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintBottom_toTopOf="@+id/txtRegisterPassword"
+        app:layout_constraintStart_toStartOf="@+id/txtRegisterPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtRegisterEmail" />
+
+    <TextView
+        android:id="@+id/tvRegisterConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Konfirmasi Kata Sandi"
+        android:textColor="#000000"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintBottom_toTopOf="@+id/txtRegisterConfirmPassword"
+        app:layout_constraintStart_toStartOf="@+id/txtRegisterConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtRegisterPassword" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/bg_btn_blue"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Daftar"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toTopOf="@+id/txtRegisterTerms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRegisterConfirmPassword"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

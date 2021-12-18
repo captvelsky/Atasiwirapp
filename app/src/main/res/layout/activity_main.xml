@@ -6,46 +6,82 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="memek"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgLandingLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvLandingTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/img_app_logo" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:id="@+id/btnLandingRegister"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        android:text="Daftar"
+        android:textAllCaps="false"
+        android:textColor="#46B3E6"
+        android:textSize="16sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnLandingLogin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnLandingLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLandingLogin"
+        tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnLandingLogin"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="49dp"
+        android:background="@drawable/bg_btn_blue"
+        android:text="Masuk"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toTopOf="@+id/btnLandingRegister"
+        app:layout_constraintEnd_toEndOf="@+id/tvLandingDesc"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tvLandingDesc"
+        app:layout_constraintTop_toBottomOf="@+id/tvLandingDesc"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvLandingDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:text="Button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        android:layout_marginTop="49dp"
+        android:text="Aplikasi pariwisata Kota Malang"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:fontFamily="@font/poppins"
+        app:layout_constraintBottom_toTopOf="@+id/btnLandingLogin"
+        app:layout_constraintEnd_toEndOf="@+id/tvLandingTitle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tvLandingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvLandingTitle" />
+
+    <TextView
+        android:id="@+id/tvLandingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:text="Atasiwirapp"
+        android:textColor="#0F88C5"
+        android:textSize="40sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toTopOf="@+id/tvLandingDesc"
+        app:layout_constraintEnd_toEndOf="@+id/imgLandingLogo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/imgLandingLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imgLandingLogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
