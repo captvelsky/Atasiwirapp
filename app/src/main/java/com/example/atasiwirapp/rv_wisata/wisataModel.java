@@ -1,6 +1,6 @@
-package com.example.atasiwirapp;
+package com.example.atasiwirapp.rv_wisata;
 
-public class listModel {
+public class wisataModel {
 
     private String title, rating, desc;
     private int img;
