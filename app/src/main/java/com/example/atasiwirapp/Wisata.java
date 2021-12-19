@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,9 +28,9 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
     RecyclerView _rvReview;
     reviewAdapter reviewAdapter;
     Button _btnAddReview;
-    ImageButton _btnReviewBack;
+    ImageButton _btnWisataBack;
     DatabaseReference mDatabase;
-    TextView _wTitle, _wRating,_wDesc;
+    TextView _wTitle, _wRating, _wDesc, _tvWisataGmaps;
 
     ArrayList<reviewModel> models = new ArrayList<>();
 
@@ -47,7 +48,11 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
         _rvReview.setAdapter(reviewAdapter);
 
         _btnAddReview = findViewById(R.id.btnAddReview);
+        _btnWisataBack = findViewById(R.id.btnWisataBack);
+        _tvWisataGmaps = findViewById(R.id.tvWisataGmaps);
         _btnAddReview.setOnClickListener(this);
+        _btnWisataBack.setOnClickListener(this);
+        _tvWisataGmaps.setOnClickListener(this);
 
         Intent intent = getIntent();
         String iTitle = intent.getStringExtra("wTitle");
@@ -58,7 +63,7 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
         _wRating.setText(iRating);
         _wDesc.setText(iDesc);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("review");
+        mDatabase = FirebaseDatabase.getInstance().getReference("review " + _wTitle.getText().toString());
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -81,8 +86,14 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view) {
         if (view.getId() == _btnAddReview.getId()) {
             Intent addReview = new Intent(this, AddReview.class);
+            addReview.putExtra("title", _wTitle.getText().toString());
             startActivity(addReview);
-        } else if (view.getId() == _btnReviewBack.getId()) {
+        } else if (view.getId() == _tvWisataGmaps.getId()) {
+            String url = "https://www.google.com/maps/search/" + _wTitle.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
+        } else if (view.getId() == _btnWisataBack.getId()) {
             finish();
         }
     }
