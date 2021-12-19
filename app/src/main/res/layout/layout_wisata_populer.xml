@@ -9,19 +9,19 @@
 
 
     <ImageView
-        android:id="@+id/wisata_img"
+        android:id="@+id/imgWp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background" />
 
     <TextView
-        android:id="@+id/wisata_nama"
+        android:id="@+id/namaWp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:text="TextView"
-        android:textSize="10sp" />
+        android:text="Nama Wisata"
+        android:textSize="12sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,8 +29,8 @@
 
         <ImageView
             android:id="@+id/star_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
             android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,12 +38,13 @@
             app:srcCompat="@drawable/ic_star" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/ratingWp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
-            android:text="TextView"
-            android:textSize="8sp"
+            android:text="5.0"
+            android:textColor="#EFBE05"
+            android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/star_img"
             app:layout_constraintTop_toTopOf="parent" />
 

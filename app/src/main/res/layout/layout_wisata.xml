@@ -41,8 +41,8 @@
                 android:id="@+id/imgMenuWisataStar"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-                android:src="@drawable/ic_star"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_star" />
 
             <TextView
                 android:id="@+id/wisataRating"
