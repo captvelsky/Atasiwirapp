@@ -1,56 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="300dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardElevation="0dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="79dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
 
         <ImageView
             android:id="@+id/imgReviewPic"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/img_profile_pic_grey" />
 
         <TextView
             android:id="@+id/reviewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="0dp"
             android:layout_toEndOf="@id/imgReviewPic"
-            android:text="The Wok"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Name"
             android:textColor="#000"
             android:textSize="14sp" />
 
 
         <ImageView
             android:id="@+id/imgReviewStar"
-            android:layout_width="13dp"
-            android:layout_height="13dp"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
             android:layout_below="@+id/imgReviewPic"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/ic_star" />
 
         <TextView
             android:id="@+id/reviewRating"
-            android:layout_width="13dp"
-            android:layout_height="13dp"
-            android:layout_below="@+id/imgReviewPic"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/imgReviewStar"
             android:layout_alignEnd="@+id/imgReviewPic"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
+            android:layout_alignBottom="@+id/imgReviewStar"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
             android:layout_toEndOf="@+id/imgReviewStar"
+            android:fontFamily="@font/poppins_semibold"
             android:text="0.0"
             android:textColor="#EFBE05"
-            android:textSize="9sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/reviewDesc"
@@ -58,12 +63,15 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/reviewName"
             android:layout_alignStart="@+id/reviewName"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="11dp"
-            android:text="Tempatnya bagus dan bersih, semoga yang like diberi berkah oleh Allah SWT. Amin"
+            android:layout_marginBottom="0dp"
+            android:fontFamily="@font/poppins"
+            android:text="Review"
             android:textColor="#000"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

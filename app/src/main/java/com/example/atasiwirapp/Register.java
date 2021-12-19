@@ -42,39 +42,44 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View view) {
         if (view.getId() == _btnRegister.getId()) {
-            // tambah if else cocokin password sama confirmnya
-            mAuth.createUserWithEmailAndPassword(_txtRegisterEmail.getText().toString(), _txtRegisterPassword.getText().toString())
-                    .addOnCompleteListener(this,
-                            new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information
-                                        FirebaseUser user = mAuth.getCurrentUser();
-                                        if (user != null) {
-                                            if (!user.isEmailVerified()) {
-                                                final String email = user.getEmail();
-                                                user.sendEmailVerification().addOnCompleteListener(Register.this, new OnCompleteListener<Void>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<Void> task) {
-                                                        if (task.isSuccessful()) {
-                                                            finish();
-                                                            Toast.makeText(Register.this, "Verification email sent to " + email, Toast.LENGTH_SHORT).show();
-                                                        } else {
-                                                            Log.e("Verification error.", "sendEmailVerification", task.getException());
-                                                            Toast.makeText(Register.this, "Failed to send email verification.", Toast.LENGTH_SHORT).show();
+            // Cek if password == confirm password
+            if (!_txtRegisterPassword.getText().toString().equals(_txtRegisterConfirmPassword.getText().toString())) {
+                Toast.makeText(Register.this, "Kata sandi tidak sama", Toast.LENGTH_SHORT).show();
+            } else {
+                mAuth.createUserWithEmailAndPassword(_txtRegisterEmail.getText().toString(), _txtRegisterPassword.getText().toString())
+                        .addOnCompleteListener(this,
+                                new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            // Sign in success, update UI with the signed-in user's information
+                                            FirebaseUser user = mAuth.getCurrentUser();
+                                            if (user != null) {
+                                                if (!user.isEmailVerified()) {
+                                                    final String email = user.getEmail();
+                                                    user.sendEmailVerification().addOnCompleteListener(Register.this, new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if (task.isSuccessful()) {
+                                                                finish();
+                                                                Toast.makeText(Register.this, "Email verifikasi dikirim ke " + email, Toast.LENGTH_SHORT).show();
+                                                            } else {
+                                                                Log.e("Verification error.", "sendEmailVerification", task.getException());
+                                                                Toast.makeText(Register.this, "Gagal mengirim email verifikasi", Toast.LENGTH_SHORT).show();
+                                                            }
+                                                            // [END_EXCLUDE]
                                                         }
-                                                        // [END_EXCLUDE]
-                                                    }
-                                                });
+                                                    });
+                                                }
                                             }
+                                        } else {
+                                            Toast.makeText(Register.this, "Autentikasi gagal", Toast.LENGTH_LONG).show();
                                         }
-                                    } else {
-                                        Toast.makeText(Register.this, "Authentication failed.", Toast.LENGTH_LONG).show();
                                     }
                                 }
-                            }
-                    );
+
+                        );
+            }
         }
     }
 
