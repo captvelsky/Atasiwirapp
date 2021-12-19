@@ -54,7 +54,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         if (user != null) {
                                             if (user.isEmailVerified()) {
-                                                Intent home = new Intent(Login.this, MenuWisata.class);
+                                                Intent home = new Intent(Login.this, HomePage.class);
                                                 startActivity(home);
                                             } else {
                                                 Toast.makeText(Login.this, "Akun belum diverifikasi", Toast.LENGTH_LONG).show();

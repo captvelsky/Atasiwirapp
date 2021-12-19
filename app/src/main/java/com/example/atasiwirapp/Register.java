@@ -61,6 +61,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                                         @Override
                                                         public void onComplete(@NonNull Task<Void> task) {
                                                             if (task.isSuccessful()) {
+                                                                Intent login = new Intent(Register.this, Login.class);
+                                                                startActivity(login);
                                                                 finish();
                                                                 Toast.makeText(Register.this, "Email verifikasi dikirim ke " + email, Toast.LENGTH_SHORT).show();
                                                             } else {
