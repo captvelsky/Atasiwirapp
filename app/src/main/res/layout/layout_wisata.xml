@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/imgMenuWisataPic"
             android:layout_width="120dp"
-            android:layout_height="92dp"
+            android:layout_height="match_parent"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="6dp"
             android:layout_toEndOf="@id/imgMenuWisataPic"
             android:fontFamily="@font/poppins_semibold"
             android:text="Title"
@@ -63,8 +63,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ratingContainer"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="11dp"
+            android:paddingBottom="6dp"
             android:layout_toEndOf="@id/imgMenuWisataPic"
             android:fontFamily="@font/poppins"
             android:text="description"
