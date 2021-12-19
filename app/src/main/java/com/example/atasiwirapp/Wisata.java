@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.atasiwirapp.rv_review.reviewAdapter;
@@ -31,6 +32,7 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
     ImageButton _btnWisataBack;
     DatabaseReference mDatabase;
     TextView _wTitle, _wRating, _wDesc, _tvWisataGmaps;
+    ImageView _imgWisataPic;
 
     ArrayList<reviewModel> models = new ArrayList<>();
 

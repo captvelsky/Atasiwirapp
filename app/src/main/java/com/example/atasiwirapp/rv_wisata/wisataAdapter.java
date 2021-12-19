@@ -50,7 +50,6 @@ public class wisataAdapter extends RecyclerView.Adapter<wisataHolder> {
                 intent.putExtra("wTitle", gTitle);
                 intent.putExtra("wRating", gRating);
                 intent.putExtra("wDesc", gDesc);
-
                 c.startActivity(intent);
             }
         });

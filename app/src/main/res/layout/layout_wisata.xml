@@ -14,7 +14,8 @@
         <ImageView
             android:id="@+id/imgMenuWisataPic"
             android:layout_width="120dp"
-            android:layout_height="match_parent"
+            android:layout_height="110dp"
+            android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
@@ -59,18 +60,18 @@
 
         <TextView
             android:id="@+id/wisataDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
             android:layout_below="@id/ratingContainer"
             android:layout_marginStart="10dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="11dp"
-            android:paddingBottom="6dp"
             android:layout_toEndOf="@id/imgMenuWisataPic"
             android:fontFamily="@font/poppins"
+            android:paddingBottom="6dp"
             android:text="description"
             android:textColor="#000"
-            android:textSize="10sp" />
+            android:textSize="8sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
