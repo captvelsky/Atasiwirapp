@@ -2,7 +2,7 @@ package com.example.atasiwirapp.rv_home_wp;
 
 public class wpModel {
 
-    private String nama, rating;
+    private String nama, rating, desc;
     private int img;
 
     public String getNama() {
@@ -27,5 +27,13 @@ public class wpModel {
 
     public void setImg(int img) {
         this.img = img;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 }
