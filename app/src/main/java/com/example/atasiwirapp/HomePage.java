@@ -13,17 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.atasiwirapp.rv_home_wp.wpAdapter;
 import com.example.atasiwirapp.rv_home_wp.wpModel;
-import com.example.atasiwirapp.rv_wisata.wisataAdapter;
-import com.example.atasiwirapp.rv_wisata.wisataModel;
+import com.example.atasiwirapp.rv_home_informasi.infoAdapter;
+import com.example.atasiwirapp.rv_home_informasi.infoModel;
 
 import java.util.ArrayList;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener {
 
-    RecyclerView _rvWp;
+    RecyclerView _rvWp, _rvInfo;
     wpAdapter wpAdapter;
+    infoAdapter infoAdapter;
     TextView _profileEdit;
-    ImageButton _btnLogout;
+    ImageButton _btnLogout, _btnWisata, _btnHotel, _btnKuliner, _btnSuvenir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +37,18 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         _rvWp.setAdapter(wpAdapter);
 
         _profileEdit = findViewById(R.id.profile_edit);
+        _profileEdit.setOnClickListener(this);
+
+        _btnWisata = findViewById(R.id.btnWisata);
+        _btnWisata.setOnClickListener(this);
+        _btnHotel = findViewById(R.id.btnHotel);
+        _btnHotel.setOnClickListener(this);
+        _btnKuliner = findViewById(R.id.btnKuliner);
+        _btnKuliner.setOnClickListener(this);
+        _btnSuvenir = findViewById(R.id.btnSuvenir);
 
         _btnLogout = findViewById(R.id.logout_btn);
-        _btnLogout.setOnClickListener(this);
+
     }
 
     private ArrayList<wpModel> getList() {
@@ -102,9 +112,21 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == _btnAddReview.getId()) {
-            Intent addReview = new Intent(this, AddReview.class);
-            startActivity(addReview);
+        if (view.getId() == _profileEdit.getId()) {
+            Intent editProfile = new Intent(this, EditProfile.class);
+            startActivity(editProfile);
+        } else if (view.getId() == _btnWisata.getId()) {
+            Intent menuWisata = new Intent(this, MenuWisata.class);
+            startActivity(menuWisata);
+        } else if (view.getId() == _btnHotel.getId()) {
+            Intent comingSoon = new Intent(this, ComingSoon.class);
+            startActivity(comingSoon);
+        } else if (view.getId() == _btnKuliner.getId()) {
+            Intent comingSoon = new Intent(this, ComingSoon.class);
+            startActivity(comingSoon);
+        } else if (view.getId() == _btnSuvenir.getId()) {
+            Intent comingSoon = new Intent(this, ComingSoon.class);
+            startActivity(comingSoon);
         } else if (view.getId() == _btnLogout.getId()) {
             finish();
         }

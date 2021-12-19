@@ -11,6 +11,7 @@
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/hotel.xml" value="0.2703125" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/ic_logout_svgrepo_com.xml" value="0.2703125" />
+        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/ic_star.xml" value="0.2703125" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/ic_wisata.xml" value="0.2703125" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/kuliner.xml" value="0.2703125" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/profile_picture.xml" value="0.2703125" />
@@ -19,14 +20,17 @@
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/suvenir.xml" value="0.2703125" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/drawable/wisata.xml" value="0.2703125" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/activity_add_review.xml" value="0.16666666666666666" />
+        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/activity_menu_wisata.xml" value="0.25416666666666665" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/activity_wisata.xml" value="0.3641791044776119" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/circle_image.xml" value="0.17300724637681159" />
+        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/coming_soon_page.xml" value="0.13020833333333334" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/edit_profile.xml" value="0.17300724637681159" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/edit_profile_page.xml" value="0.4" />
-        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/home_page.xml" value="0.264" />
+        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/home_page.xml" value="0.4" />
+        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/layout_informasi.xml" value="0.536" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/layout_review.xml" value="0.6" />
-        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/layout_wisata.xml" value="0.536" />
-        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/layout_wisata_populer.xml" value="0.536" />
+        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/layout_wisata.xml" value="0.32275132275132273" />
+        <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/layout_wisata_populer.xml" value="0.4" />
         <entry key="..\:/ALDZ/UNIVERSITAS/UB/PAPB/Atasiwirapp/app/src/main/res/layout/wp_layout_item.xml" value="0.72" />
         <entry key="..\:/AndroidStudioProjects/Atasiwirapp/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/ProyekPAPB/Atasiwirapp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
