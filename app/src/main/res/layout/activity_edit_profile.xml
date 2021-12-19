@@ -7,4 +7,84 @@
     android:layout_height="match_parent"
     tools:context=".EditProfile">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <EditText
+      android:id="@+id/txtEditProfileName"
+      android:layout_width="330dp"
+      android:layout_height="40dp"
+      android:layout_marginTop="3dp"
+      android:background="@drawable/bg_input"
+      android:ems="10"
+      android:fontFamily="@font/poppins"
+      android:inputType="textPersonName"
+      android:padding="8dp"
+      android:textSize="12sp"
+      app:layout_constraintEnd_toEndOf="@+id/cardView"
+      app:layout_constraintHorizontal_bias="0.502"
+      app:layout_constraintStart_toStartOf="@+id/cardView"
+      app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+  <TextView
+      android:id="@+id/tvEditProfileTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="42dp"
+      android:fontFamily="@font/poppins_semibold"
+      android:text="Profil"
+      android:textColor="#0F88C5"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageButton
+      android:id="@+id/imageButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="-30dp"
+      android:background="@android:color/transparent"
+      android:elevation="3dp"
+      app:layout_constraintBottom_toBottomOf="@+id/cardView"
+      app:layout_constraintStart_toEndOf="@+id/cardView"
+      app:srcCompat="@drawable/btn_edit_profile_pic" />
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardView"
+      android:layout_width="125dp"
+      android:layout_height="125dp"
+      android:layout_marginTop="30dp"
+      app:cardBackgroundColor="@color/white"
+      app:cardCornerRadius="250dp"
+      app:layout_constraintEnd_toEndOf="@+id/tvEditProfileTitle"
+      app:layout_constraintStart_toStartOf="@+id/tvEditProfileTitle"
+      app:layout_constraintTop_toBottomOf="@+id/tvEditProfileTitle">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="250dp">
+
+      <ImageView
+          android:id="@+id/imgEditProfilePic"
+          android:layout_width="120dp"
+          android:layout_height="120dp"
+          android:scaleType="centerCrop"
+          android:src="@drawable/img_profile_pic_blue" />
+
+    </androidx.cardview.widget.CardView>
+
+  </androidx.cardview.widget.CardView>
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="60dp"
+      android:fontFamily="@font/poppins"
+      android:text="Nama Lengkap"
+      android:textColor="#000"
+      app:layout_constraintStart_toStartOf="@+id/txtEditProfileName"
+      app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

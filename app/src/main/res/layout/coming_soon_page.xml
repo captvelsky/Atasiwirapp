@@ -12,7 +12,7 @@
         android:layout_marginTop="20dp"
         android:text="Fitur sedang dibuat"
         android:textColor="#46B3E6"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:fontFamily="@font/poppins"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tvComingSoon"
