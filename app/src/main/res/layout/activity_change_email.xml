@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context=".ChangeEmail">
+
+    <EditText
+        android:id="@+id/txtNewEmail"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtOldEmail"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/tvNewEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewEmail" />
+
+    <TextView
+        android:id="@+id/tvNewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins"
+        android:text="Masukkan Email Baru"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="@+id/txtOldEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtOldEmail" />
+
+    <EditText
+        android:id="@+id/txtOldEmail"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvChangeEmailTitle"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/tvChangeEmailTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvOldEmail" />
+
+    <TextView
+        android:id="@+id/tvOldEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins"
+        android:text="Email Lama"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="@+id/txtOldEmail"
+        app:layout_constraintTop_toBottomOf="@+id/imgChangeEmail" />
+
+    <Button
+        android:id="@+id/btnChangeEmailSubmit"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_btn_blue"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Simpan"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvChangeEmailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Ganti Email"
+        android:textColor="#0F88C5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgChangeEmail"
+        android:layout_width="120dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvChangeEmailTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvChangeEmailTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvChangeEmailTitle"
+        app:srcCompat="@drawable/img_change_email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

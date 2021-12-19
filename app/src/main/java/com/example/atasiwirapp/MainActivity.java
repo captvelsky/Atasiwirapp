@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             if(currentUser.isEmailVerified()){
-                Intent home = new Intent(this, MenuWisata.class);
+                Intent home = new Intent(this, EditProfile.class);
                 startActivity(home);
             }
         }
