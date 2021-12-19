@@ -44,7 +44,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         if (view.getId() == _btnRegister.getId()) {
             // Cek if password == confirm password
             if (!_txtRegisterPassword.getText().toString().equals(_txtRegisterConfirmPassword.getText().toString())) {
-                Toast.makeText(Register.this, "ERROR. Please check your password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Register.this, "Kata sandi tidak sama", Toast.LENGTH_SHORT).show();
             } else {
                 mAuth.createUserWithEmailAndPassword(_txtRegisterEmail.getText().toString(), _txtRegisterPassword.getText().toString())
                         .addOnCompleteListener(this,
@@ -62,10 +62,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                                         public void onComplete(@NonNull Task<Void> task) {
                                                             if (task.isSuccessful()) {
                                                                 finish();
-                                                                Toast.makeText(Register.this, "Verification email sent to " + email, Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(Register.this, "Email verifikasi dikirim ke " + email, Toast.LENGTH_SHORT).show();
                                                             } else {
                                                                 Log.e("Verification error.", "sendEmailVerification", task.getException());
-                                                                Toast.makeText(Register.this, "Failed to send email verification.", Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(Register.this, "Gagal mengirim email verifikasi", Toast.LENGTH_SHORT).show();
                                                             }
                                                             // [END_EXCLUDE]
                                                         }
@@ -73,7 +73,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                                 }
                                             }
                                         } else {
-                                            Toast.makeText(Register.this, "Authentication failed.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(Register.this, "Autentikasi gagal", Toast.LENGTH_LONG).show();
                                         }
                                     }
                                 }

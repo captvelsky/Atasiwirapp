@@ -51,15 +51,15 @@ public class AddReview extends AppCompatActivity implements View.OnClickListener
     public void onClick(View view) {
         if (view.getId() == _btnSubmitReview.getId()) {
             if (_txtReviewDesc.getText().toString().isEmpty()) {
-                Toast.makeText(AddReview.this, "Please fill in feedback text box", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddReview.this, "Anda belum mengisi ulasan", Toast.LENGTH_LONG).show();
             } else if (_txtReviewName.getText().toString().isEmpty()) {
-                Toast.makeText(AddReview.this, "Please fill in your name", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddReview.this, "Anda belum mengisi nama", Toast.LENGTH_LONG).show();
             } else {
                 reviewModel baru = new reviewModel(_txtReviewName.getText().toString(), _txtReviewDesc.getText().toString(), String.valueOf(_addRatingBar.getRating()));
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 mDatabase.child("review " + _tvAddReviewWisataName.getText().toString()).push().setValue(baru);
 
-                Toast.makeText(AddReview.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddReview.this, "Terima kasih telah memberi ulasan!", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }

@@ -57,11 +57,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                                 Intent home = new Intent(Login.this, MenuWisata.class);
                                                 startActivity(home);
                                             } else {
-                                                Toast.makeText(Login.this, "Not verified", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(Login.this, "Akun belum diverifikasi", Toast.LENGTH_LONG).show();
                                             }
                                         }
                                     } else {
-                                        Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Login.this, "Autentikasi gagal", Toast.LENGTH_LONG).show();
                                     }
                                 }
                             }
