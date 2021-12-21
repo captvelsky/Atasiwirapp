@@ -2,6 +2,8 @@ package com.example.atasiwirapp.rv_wisata;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,11 +47,17 @@ public class wisataAdapter extends RecyclerView.Adapter<wisataHolder> {
                 String gTitle = models.get(position).getTitle();
                 String gRating = models.get(position).getRating();
                 String gDesc = models.get(position).getDesc();
+                BitmapDrawable bitmapDrawable = (BitmapDrawable)holder._imgWisataPic.getDrawable();
+                Bitmap bitmap = bitmapDrawable.getBitmap();
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] bytes = stream.toByteArray();
 
                 Intent intent = new Intent(c, Wisata.class);
                 intent.putExtra("wTitle", gTitle);
                 intent.putExtra("wRating", gRating);
                 intent.putExtra("wDesc", gDesc);
+                intent.putExtra("wImg", bytes);
                 c.startActivity(intent);
             }
         });

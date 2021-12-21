@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.atasiwirapp.rv_review.reviewAdapter;
@@ -31,6 +34,7 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
     ImageButton _btnWisataBack;
     DatabaseReference mDatabase;
     TextView _wTitle, _wRating, _wDesc, _tvWisataGmaps;
+    ImageView _wImg;
 
     ArrayList<reviewModel> models = new ArrayList<>();
 
@@ -42,6 +46,7 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
         _wTitle = findViewById(R.id.tvWisataName);
         _wRating = findViewById(R.id.tvWisataRating);
         _wDesc = findViewById(R.id.tvWisataDesc);
+        _wImg = findViewById(R.id.imgWisataPic);
 
         _rvReview = findViewById(R.id.rvReview);
         _rvReview.setLayoutManager(new LinearLayoutManager(this));
@@ -58,10 +63,13 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
         String iTitle = intent.getStringExtra("wTitle");
         String iRating = intent.getStringExtra("wRating");
         String iDesc = intent.getStringExtra("wDesc");
+        byte[] bytes = getIntent().getByteArrayExtra("wImg");
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
 
         _wTitle.setText(iTitle);
         _wRating.setText(iRating);
         _wDesc.setText(iDesc);
+        _wImg.setImageBitmap(bitmap);
 
         mDatabase = FirebaseDatabase.getInstance().getReference("review " + _wTitle.getText().toString());
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
