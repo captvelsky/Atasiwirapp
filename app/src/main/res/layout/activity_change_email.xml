@@ -8,6 +8,33 @@
     tools:context=".ChangeEmail">
 
     <EditText
+        android:id="@+id/txtEmPassword"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_input"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:inputType="textPassword"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmPassword" />
+
+    <TextView
+        android:id="@+id/tvEmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins"
+        android:text="Kata Sandi"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="@+id/txtEmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtOldEmail" />
+
+    <EditText
         android:id="@+id/txtNewEmail"
         android:layout_width="330dp"
         android:layout_height="48dp"
@@ -19,9 +46,9 @@
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtOldEmail"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/tvNewEmail"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNewEmail" />
 
     <TextView
@@ -32,8 +59,8 @@
         android:fontFamily="@font/poppins"
         android:text="Masukkan Email Baru"
         android:textColor="#000"
-        app:layout_constraintStart_toStartOf="@+id/txtOldEmail"
-        app:layout_constraintTop_toBottomOf="@+id/txtOldEmail" />
+        app:layout_constraintStart_toStartOf="@+id/txtEmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmPassword" />
 
     <EditText
         android:id="@+id/txtOldEmail"
@@ -47,16 +74,16 @@
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvChangeEmailTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/tvChangeEmailTitle"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOldEmail" />
 
     <TextView
         android:id="@+id/tvOldEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins"
         android:text="Email Lama"
         android:textColor="#000"
@@ -96,7 +123,7 @@
         android:id="@+id/imgChangeEmail"
         android:layout_width="120dp"
         android:layout_height="95dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="@+id/tvChangeEmailTitle"
         app:layout_constraintStart_toStartOf="@+id/tvChangeEmailTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvChangeEmailTitle"

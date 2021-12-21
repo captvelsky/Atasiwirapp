@@ -16,17 +16,17 @@
         <ImageView
             android:id="@+id/imgHomeContainer"
             android:layout_width="420dp"
-            android:layout_height="232dp"
+            android:layout_height="230dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/shadow_container" />
+            app:srcCompat="@drawable/container_shadow" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="74dp"
             android:layout_height="74dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="42dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="250dp"
             app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -39,7 +39,7 @@
                 app:cardCornerRadius="250dp">
 
                 <ImageView
-                    android:id="@+id/imgEditProfilePic"
+                    android:id="@+id/imgProfilePic"
                     android:layout_width="69dp"
                     android:layout_height="69dp"
                     android:scaleType="centerCrop"
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Zhong Xina"
+            android:text="Nama Lengkap"
             android:textColor="#000"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -90,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
-            android:text="zhongxina@gmail.com"
+            android:text="email"
             android:textColor="#000"
             android:textSize="10sp"
             app:layout_constraintStart_toStartOf="@+id/profile_name"
@@ -130,7 +130,7 @@
             android:text="Wisata"
             android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/btnHomeWisata"
             app:layout_constraintStart_toStartOf="@+id/btnHomeWisata"
             app:layout_constraintTop_toBottomOf="@+id/btnHomeWisata" />
@@ -151,7 +151,7 @@
             android:layout_height="60dp"
             android:background="@drawable/btn_hotel"
             android:elevation="3dp"
-            app:layout_constraintBottom_toTopOf="@+id/wisata_text"
+            app:layout_constraintBottom_toBottomOf="@+id/btnHomeWisata"
             app:layout_constraintEnd_toStartOf="@+id/btnHomeKuliner"
             app:layout_constraintStart_toEndOf="@+id/btnHomeWisata"
             app:layout_constraintTop_toTopOf="@+id/btnHomeWisata" />
@@ -187,7 +187,7 @@
             android:text="Hotel"
             android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/btnHomeHotel"
             app:layout_constraintStart_toStartOf="@+id/btnHomeHotel"
             app:layout_constraintTop_toBottomOf="@+id/btnHomeHotel" />
@@ -201,7 +201,7 @@
             android:text="Kuliner"
             android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/btnHomeKuliner"
             app:layout_constraintStart_toStartOf="@+id/btnHomeKuliner"
             app:layout_constraintTop_toBottomOf="@+id/btnHomeKuliner" />
@@ -215,59 +215,59 @@
             android:text="Suvenir"
             android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/btnHomeSuvenir"
             app:layout_constraintStart_toStartOf="@+id/btnHomeSuvenir"
             app:layout_constraintTop_toBottomOf="@+id/btnHomeSuvenir" />
 
-        <LinearLayout
-            android:id="@+id/wisata_populer_layout"
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="@+id/imgHomeContainer"
-            app:layout_constraintStart_toStartOf="@+id/imgHomeContainer"
-            app:layout_constraintTop_toBottomOf="@+id/hotel_text">
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/wisata_text">
 
             <TextView
                 android:id="@+id/wisata_populer_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Wisata Populer"
                 android:textColor="#000"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wisata_text" />
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvWp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_below="@+id/wisata_populer_text"
+                android:layout_alignStart="@+id/wisata_populer_text"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:scrollbars="horizontal" />
-
-        </LinearLayout>
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
-            app:layout_constraintEnd_toEndOf="@+id/wisata_populer_layout"
-            app:layout_constraintStart_toStartOf="@+id/wisata_populer_layout"
-            app:layout_constraintTop_toBottomOf="@+id/wisata_populer_layout">
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
             <TextView
                 android:id="@+id/info_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="0dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Informasi"
                 android:textColor="#000"
@@ -278,19 +278,23 @@
                 android:id="@+id/lihatSemuaInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/info_text"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="0dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Lihat Semua"
                 android:textColor="#46B3E6"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvInfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/info_text"
-                android:layout_marginStart="30dp"
+                android:layout_alignStart="@+id/info_text"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintTop_toBottomOf="@+id/info_text" />
         </RelativeLayout>

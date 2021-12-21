@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="4dp"
     app:cardElevation="3dp"
+    app:cardMaxElevation="2dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout

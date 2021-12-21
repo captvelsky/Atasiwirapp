@@ -17,12 +17,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
 
     EditText _txtLoginEmail, _txtLoginPassword;
-    TextView _txtLoginRegister;
+    TextView _txtLoginRegister, _txtLoginForgotPassword;
     Button _btnLogin;
 
     @Override
@@ -33,12 +36,21 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         _txtLoginEmail = findViewById(R.id.txtLoginEmail);
         _txtLoginPassword = findViewById(R.id.txtLoginPassword);
         _txtLoginRegister = findViewById(R.id.txtLoginRegister);
+        _txtLoginForgotPassword = findViewById(R.id.txtLoginForgotPassword);
         _btnLogin = findViewById(R.id.btnLogin);
 
         _btnLogin.setOnClickListener(this);
         _txtLoginRegister.setOnClickListener(this);
+        _txtLoginForgotPassword.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
+    }
+
+    public static boolean isEmailValid(String email) {
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     @Override
@@ -76,6 +88,24 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         } else if (view.getId() == _txtLoginRegister.getId()) {
             Intent register = new Intent(this, Register.class);
             startActivity(register);
+        } else if (view.getId() == _txtLoginForgotPassword.getId()) {
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            String email = _txtLoginEmail.getText().toString();
+            if (email.equals("")) {
+                Toast.makeText(Login.this, "Isi email terlebih dahulu untuk mengganti password", Toast.LENGTH_SHORT).show();
+            } else if (!isEmailValid(email)) {
+                Toast.makeText(Login.this, "Email salah", Toast.LENGTH_SHORT).show();
+            } else {
+                auth.sendPasswordResetEmail(email)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(Login.this, "Email untuk mengganti password berhasil dikirim", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+            }
         }
     }
 

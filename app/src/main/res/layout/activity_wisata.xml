@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgWisataPic"
-            app:srcCompat="@drawable/shadow_container" />
+            app:srcCompat="@drawable/container_shadow" />
 
         <TextView
             android:id="@+id/tvWisataName"

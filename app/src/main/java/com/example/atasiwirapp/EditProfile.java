@@ -24,11 +24,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
@@ -62,13 +64,16 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         _btnEditProfilePic = findViewById(R.id.btnEditProfilePic);
         _btnChangeEmail = findViewById(R.id.btnChangeEmail);
         _btnChangePassword = findViewById(R.id.btnChangePassword);
+        _btnEditProfileSubmit = findViewById(R.id.btnEditProfileSubmit);
 
         _btnEditProfilePic.setOnClickListener(this);
         _btnChangeEmail.setOnClickListener(this);
         _btnChangePassword.setOnClickListener(this);
+        _btnEditProfileSubmit.setOnClickListener(this);
 
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            _txtEditProfileName.setText(user.getDisplayName());
 
             mStorageRef = FirebaseStorage.getInstance().getReference();
             StorageReference fotoRef = mStorageRef.child(user.getUid() + "/profilepic");
@@ -82,15 +87,13 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
                         items.get(0).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
-                                Glide.with(EditProfile.this).load(uri).centerCrop().into(_imgEditProfilePic);
+                                Glide.with(getApplicationContext()).load(uri).centerCrop().into(_imgEditProfilePic);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception exception) {
                             }
                         });
-                    } else {
-                        Toast.makeText(EditProfile.this, "Foto profil belum ada", Toast.LENGTH_SHORT).show();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -242,7 +245,22 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
             Intent changePassword = new Intent(this, ChangePassword.class);
             startActivity(changePassword);
         } else if (view.getId() == _btnEditProfileSubmit.getId()) {
-            finish();
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(_txtEditProfileName.getText().toString()).build();
+            user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(EditProfile.this, "Perubahan berhasil disimpan", Toast.LENGTH_LONG).show();
+                        Intent home = new Intent(EditProfile.this, Home.class);
+                        startActivity(home);
+                        finish();
+                    } else {
+                        Toast.makeText(EditProfile.this, "Perubahan gagal disimpan", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
         }
     }
 
