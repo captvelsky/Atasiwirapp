@@ -43,12 +43,17 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         if (view.getId() == _btnRegister.getId()) {
             // Cek if password == confirm password
-            if (!_txtRegisterPassword.getText().toString().equals(_txtRegisterConfirmPassword.getText().toString())) {
+            if (_txtRegisterEmail.getText().toString().equals("") && _txtRegisterPassword.getText().toString().equals("")) {
+                Toast.makeText(Register.this, "Email dan password belum diisi", Toast.LENGTH_LONG).show();
+            } else if (_txtRegisterEmail.getText().toString().equals("")) {
+                Toast.makeText(Register.this, "Email belum diisi", Toast.LENGTH_LONG).show();
+            } else if (_txtRegisterPassword.getText().toString().equals("")) {
+                Toast.makeText(Register.this, "Password belum diisi", Toast.LENGTH_LONG).show();
+            } else if (!_txtRegisterPassword.getText().toString().equals(_txtRegisterConfirmPassword.getText().toString())) {
                 Toast.makeText(Register.this, "Kata sandi tidak sama", Toast.LENGTH_SHORT).show();
             } else {
                 mAuth.createUserWithEmailAndPassword(_txtRegisterEmail.getText().toString(), _txtRegisterPassword.getText().toString())
-                        .addOnCompleteListener(this,
-                                new OnCompleteListener<AuthResult>() {
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
@@ -79,7 +84,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                         }
                                     }
                                 }
-
                         );
             }
         }

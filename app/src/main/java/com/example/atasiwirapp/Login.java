@@ -44,28 +44,35 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == _btnLogin.getId()) {
-            mAuth.signInWithEmailAndPassword(_txtLoginEmail.getText().toString(), _txtLoginPassword.getText().toString())
-                    .addOnCompleteListener(this,
-                            new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information
-                                        FirebaseUser user = mAuth.getCurrentUser();
-                                        if (user != null) {
-                                            if (user.isEmailVerified()) {
-                                                Intent home = new Intent(Login.this, HomePage.class);
-                                                startActivity(home);
-                                            } else {
-                                                Toast.makeText(Login.this, "Akun belum diverifikasi", Toast.LENGTH_LONG).show();
+            if (_txtLoginEmail.getText().toString().equals("") && _txtLoginPassword.getText().toString().equals("")) {
+                Toast.makeText(Login.this, "Email dan password belum diisi", Toast.LENGTH_LONG).show();
+            } else if (_txtLoginEmail.getText().toString().equals("")) {
+                Toast.makeText(Login.this, "Email belum diisi", Toast.LENGTH_LONG).show();
+            } else if (_txtLoginPassword.getText().toString().equals("")) {
+                Toast.makeText(Login.this, "Password belum diisi", Toast.LENGTH_LONG).show();
+            } else {
+                mAuth.signInWithEmailAndPassword(_txtLoginEmail.getText().toString(), _txtLoginPassword.getText().toString())
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            // Sign in success, update UI with the signed-in user's information
+                                            FirebaseUser user = mAuth.getCurrentUser();
+                                            if (user != null) {
+                                                if (user.isEmailVerified()) {
+                                                    Intent home = new Intent(Login.this, Home.class);
+                                                    startActivity(home);
+                                                } else {
+                                                    Toast.makeText(Login.this, "Akun belum diverifikasi", Toast.LENGTH_LONG).show();
+                                                }
                                             }
+                                        } else {
+                                            Toast.makeText(Login.this, "Autentikasi gagal", Toast.LENGTH_LONG).show();
                                         }
-                                    } else {
-                                        Toast.makeText(Login.this, "Autentikasi gagal", Toast.LENGTH_LONG).show();
                                     }
                                 }
-                            }
-                    );
+                        );
+            }
         } else if (view.getId() == _txtLoginRegister.getId()) {
             Intent register = new Intent(this, Register.class);
             startActivity(register);

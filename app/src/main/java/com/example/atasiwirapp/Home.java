@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
-public class HomePage extends AppCompatActivity implements View.OnClickListener {
+public class Home extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView _rvWp, _rvInfo;
     wpAdapter wpAdapter;
@@ -30,7 +29,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_page);
+        setContentView(R.layout.activity_home);
 
         _rvWp = findViewById(R.id.rvWp);
         _rvWp.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -45,13 +44,13 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         _profileEdit = findViewById(R.id.profile_edit);
         _profileEdit.setOnClickListener(this);
 
-        _btnWisata = findViewById(R.id.btnWisata);
+        _btnWisata = findViewById(R.id.btnHomeWisata);
         _btnWisata.setOnClickListener(this);
-        _btnHotel = findViewById(R.id.btnHotel);
+        _btnHotel = findViewById(R.id.btnHomeHotel);
         _btnHotel.setOnClickListener(this);
-        _btnKuliner = findViewById(R.id.btnKuliner);
+        _btnKuliner = findViewById(R.id.btnHomeKuliner);
         _btnKuliner.setOnClickListener(this);
-        _btnSuvenir = findViewById(R.id.btnSuvenir);
+        _btnSuvenir = findViewById(R.id.btnHomeSuvenir);
         _btnSuvenir.setOnClickListener(this);
 
         _btnLogout = findViewById(R.id.logout_btn);

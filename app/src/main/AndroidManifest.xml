@@ -22,7 +22,7 @@
             android:name=".ChangeEmail"
             android:exported="false" />
         <activity
-            android:name=".HomePage"
+            android:name=".Home"
             android:exported="false" />
         <activity
             android:name=".EditProfile"
