@@ -16,12 +16,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
 
-    EditText _txtRegisterEmail, _txtRegisterPassword, _txtRegisterConfirmPassword;
+    EditText _txtRegisterName, _txtRegisterEmail, _txtRegisterPassword, _txtRegisterConfirmPassword;
     Button _btnRegister;
 
     @Override
@@ -29,11 +30,12 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        _txtRegisterName = findViewById(R.id.txtRegisterName);
         _txtRegisterEmail = findViewById(R.id.txtRegisterEmail);
         _txtRegisterPassword = findViewById(R.id.txtRegisterPassword);
         _txtRegisterConfirmPassword = findViewById(R.id.txtRegisterConfirmPassword);
-        _btnRegister = findViewById(R.id.btnRegister);
 
+        _btnRegister = findViewById(R.id.btnRegister);
         _btnRegister.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
@@ -43,12 +45,17 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         if (view.getId() == _btnRegister.getId()) {
             // Cek if password == confirm password
-            if (!_txtRegisterPassword.getText().toString().equals(_txtRegisterConfirmPassword.getText().toString())) {
+            if (_txtRegisterEmail.getText().toString().equals("") && _txtRegisterPassword.getText().toString().equals("")) {
+                Toast.makeText(Register.this, "Email dan password belum diisi", Toast.LENGTH_LONG).show();
+            } else if (_txtRegisterEmail.getText().toString().equals("")) {
+                Toast.makeText(Register.this, "Email belum diisi", Toast.LENGTH_LONG).show();
+            } else if (_txtRegisterPassword.getText().toString().equals("")) {
+                Toast.makeText(Register.this, "Password belum diisi", Toast.LENGTH_LONG).show();
+            } else if (!_txtRegisterPassword.getText().toString().equals(_txtRegisterConfirmPassword.getText().toString())) {
                 Toast.makeText(Register.this, "Kata sandi tidak sama", Toast.LENGTH_SHORT).show();
             } else {
                 mAuth.createUserWithEmailAndPassword(_txtRegisterEmail.getText().toString(), _txtRegisterPassword.getText().toString())
-                        .addOnCompleteListener(this,
-                                new OnCompleteListener<AuthResult>() {
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
@@ -61,6 +68,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                                         @Override
                                                         public void onComplete(@NonNull Task<Void> task) {
                                                             if (task.isSuccessful()) {
+                                                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                                        .setDisplayName(_txtRegisterName.getText().toString()).build();
+                                                                user.updateProfile(profileUpdates);
                                                                 Intent login = new Intent(Register.this, Login.class);
                                                                 startActivity(login);
                                                                 finish();
@@ -79,7 +89,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                         }
                                     }
                                 }
-
                         );
             }
         }

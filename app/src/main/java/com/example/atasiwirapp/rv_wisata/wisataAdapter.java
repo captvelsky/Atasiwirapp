@@ -19,11 +19,11 @@ import java.util.ArrayList;
 
 public class wisataAdapter extends RecyclerView.Adapter<wisataHolder> {
 
-    Context c;
+    Context context;
     ArrayList<wisataModel> models;
 
-    public wisataAdapter(Context c, ArrayList<wisataModel> models) {
-        this.c = c;
+    public wisataAdapter(Context context, ArrayList<wisataModel> models) {
+        this.context = context;
         this.models = models;
     }
 
@@ -53,12 +53,12 @@ public class wisataAdapter extends RecyclerView.Adapter<wisataHolder> {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] bytes = stream.toByteArray();
 
-                Intent intent = new Intent(c, Wisata.class);
+                Intent intent = new Intent(context, Wisata.class);
                 intent.putExtra("wTitle", gTitle);
                 intent.putExtra("wRating", gRating);
                 intent.putExtra("wDesc", gDesc);
                 intent.putExtra("wImg", bytes);
-                c.startActivity(intent);
+                context.startActivity(intent);
             }
         });
     }

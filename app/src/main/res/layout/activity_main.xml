@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context=".MainActivity">
 
     <ImageView
@@ -21,9 +22,9 @@
     <Button
         android:id="@+id/btnLandingRegister"
         android:layout_width="248dp"
-        android:layout_height="43dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        android:background="#ffffff"
+        android:background="@drawable/bg_btn_white"
         android:text="Daftar"
         android:textAllCaps="false"
         android:textColor="#46B3E6"
@@ -39,8 +40,8 @@
     <Button
         android:id="@+id/btnLandingLogin"
         android:layout_width="248dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="49dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/bg_btn_blue"
         android:text="Masuk"
         android:textAllCaps="false"
@@ -58,7 +59,7 @@
         android:id="@+id/tvLandingDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="48dp"
         android:text="Aplikasi pariwisata Kota Malang"
         android:textColor="#000000"
         android:textSize="12sp"
@@ -73,7 +74,7 @@
         android:id="@+id/tvLandingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="48dp"
         android:text="Atasiwirapp"
         android:textColor="#0F88C5"
         android:textSize="40sp"

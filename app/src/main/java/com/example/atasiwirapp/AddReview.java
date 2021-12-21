@@ -1,5 +1,6 @@
 package com.example.atasiwirapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.atasiwirapp.rv_review.reviewModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -37,7 +40,6 @@ public class AddReview extends AppCompatActivity implements View.OnClickListener
         _tvAddReviewWisataName = findViewById(R.id.tvAddReviewWisataName);
 
         _btnSubmitReview.setOnClickListener(this);
-        _txtReviewName.setMovementMethod(null);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -57,10 +59,20 @@ public class AddReview extends AppCompatActivity implements View.OnClickListener
             } else {
                 reviewModel baru = new reviewModel(_txtReviewName.getText().toString(), _txtReviewDesc.getText().toString(), String.valueOf(_addRatingBar.getRating()));
                 mDatabase = FirebaseDatabase.getInstance().getReference();
-                mDatabase.child("review " + _tvAddReviewWisataName.getText().toString()).push().setValue(baru);
-
-                Toast.makeText(AddReview.this, "Terima kasih telah memberi ulasan!", Toast.LENGTH_SHORT).show();
-                finish();
+                mDatabase.child("review " + _tvAddReviewWisataName.getText().toString()).push().setValue(baru).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(AddReview.this, "Terima kasih telah memberi ulasan!", Toast.LENGTH_LONG).show();
+                            Intent wisata = new Intent(AddReview.this, Wisata.class);
+                            wisata.putExtra("title", _tvAddReviewWisataName.getText().toString());
+                            startActivity(wisata);
+                            finish();
+                        } else {
+                            Toast.makeText(AddReview.this, "Ulasan gagal diberikan", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
         }
     }

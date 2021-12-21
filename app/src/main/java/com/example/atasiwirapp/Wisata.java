@@ -87,7 +87,6 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-
     }
 
     @Override
@@ -102,6 +101,8 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
             intent.setData(Uri.parse(url));
             startActivity(intent);
         } else if (view.getId() == _btnWisataBack.getId()) {
+            Intent menuWisata = new Intent(Wisata.this, MenuWisata.class);
+            startActivity(menuWisata);
             finish();
         }
     }

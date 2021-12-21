@@ -31,13 +31,13 @@
 
         <ImageView
             android:id="@+id/imgWisataContainer"
-            android:layout_width="432dp"
+            android:layout_width="420dp"
             android:layout_height="228dp"
             app:layout_constraintBottom_toBottomOf="@+id/tvWisataGmaps"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgWisataPic"
-            app:srcCompat="@drawable/shadow_container" />
+            app:srcCompat="@drawable/container_shadow" />
 
         <TextView
             android:id="@+id/tvWisataName"
@@ -128,8 +128,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Ulasan"
+            android:textColor="#000"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/tvWisataGmaps"
             app:layout_constraintTop_toBottomOf="@+id/imgWisataContainer" />

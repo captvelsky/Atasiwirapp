@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // If user already login, redirect user to home
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            if(currentUser.isEmailVerified()){
-                Intent home = new Intent(this, HomePage.class);
+        if (currentUser != null) {
+            if (currentUser.isEmailVerified()) {
+                Intent home = new Intent(this, Home.class);
                 startActivity(home);
             }
         }

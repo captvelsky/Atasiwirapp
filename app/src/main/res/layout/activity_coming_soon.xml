@@ -3,16 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF">
 
     <TextView
         android:id="@+id/tvComingSoon2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Fitur sedang dibuat"
         android:textColor="#46B3E6"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:fontFamily="@font/poppins"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tvComingSoon"
@@ -24,10 +25,10 @@
         android:id="@+id/tvComingSoon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Akan Datang"
         android:textColor="#0F88C5"
-        android:textSize="40sp"
+        android:textSize="34sp"
         app:fontFamily="@font/poppins_semibold"
         app:layout_constraintBottom_toTopOf="@+id/tvComingSoon2"
         app:layout_constraintEnd_toEndOf="@+id/imgComingSoon"

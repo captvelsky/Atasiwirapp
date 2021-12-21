@@ -11,6 +11,7 @@ import com.example.atasiwirapp.R;
 import com.example.atasiwirapp.rv_wisata.wisataClickListener;
 
 public class wpHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
     ImageView _imgWp;
     TextView _namaWp, _ratingWp, _descWp;
     wpClickListener wpClickListener;
