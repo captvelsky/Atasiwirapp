@@ -15,7 +15,7 @@
 
         <ImageView
             android:id="@+id/imgHomeContainer"
-            android:layout_width="420dp"
+            android:layout_width="400dp"
             android:layout_height="230dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -171,6 +171,7 @@
             android:id="@+id/btnHomeSuvenir"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/btn_suvenir"
             android:elevation="3dp"
             app:layout_constraintBottom_toBottomOf="@+id/btnHomeKuliner"
@@ -249,7 +250,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
-                android:scrollbars="horizontal" />
+                android:scrollbars="none" />
         </RelativeLayout>
 
         <RelativeLayout
