@@ -51,14 +51,14 @@ public class MenuWisata extends AppCompatActivity {
         models.add(m);
 
         m = new wisataModel();
-        m.setImg(R.drawable.wisata_coban_rondo);
+        m.setImg(R.drawable.wisata_paralayang_batu);
         m.setTitle("Coban Rondo");
         m.setRating("4.4");
         m.setDesc("Coban Rondo adalah salah satu rekomendasi destinasi wisata bersama keluarga di akhir pekan.");
         models.add(m);
 
         m = new wisataModel();
-        m.setImg(R.drawable.wisata_bukit_teletubbies);
+        m.setImg(R.drawable.wisata_paralayang_batu);
         m.setTitle("Bukit Teletubbies");
         m.setRating("4.2");
         m.setDesc("Bukit Teletubbies adalah tempat wisata yang area taman hijau dengan pemandangan Gunung Arjuno.");
@@ -75,11 +75,11 @@ public class MenuWisata extends AppCompatActivity {
         m.setImg(R.drawable.wisata_paralayang_batu);
         m.setTitle("Paralayang Batu");
         m.setRating("4.4");
-        m.setDesc("Wisata paralayang di Batu menyajikan pemandangan alam perbukitan dan Kota Malang yanng indah.");
+        m.setDesc("Wisata paralayang di Batu menyajikan pemandangan alam perbukitan dan Kota Malang yang indah.");
         models.add(m);
 
         m = new wisataModel();
-        m.setImg(R.drawable.wisata_taman_bunga_coban_talun);
+        m.setImg(R.drawable.wisata_paralayang_batu);
         m.setTitle("Taman Bunga Coban Talun");
         m.setRating("4.3");
         m.setDesc("Coban Talun memiliki taman bunga indah layaknya di Negeri Sakura yang cocok untuk dijadikan tempat berfoto.");
