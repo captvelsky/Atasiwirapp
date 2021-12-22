@@ -72,7 +72,6 @@ public class Wisata extends AppCompatActivity implements View.OnClickListener {
         _wImg.setImageBitmap(bitmap);
 
         mDatabase = FirebaseDatabase.getInstance().getReference("review " + _wTitle.getText().toString());
-//        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

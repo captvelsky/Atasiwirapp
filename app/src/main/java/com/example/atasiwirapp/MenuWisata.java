@@ -75,7 +75,7 @@ public class MenuWisata extends AppCompatActivity {
         m.setImg(R.drawable.wisata_paralayang_batu);
         m.setTitle("Paralayang Batu");
         m.setRating("4.4");
-        m.setDesc("Wisata paralayang di Batu menyajikan pemandangan alam perbukitan dan Kota Malang yanng indah.");
+        m.setDesc("Wisata paralayang di Batu menyajikan pemandangan alam perbukitan dan Kota Malang yang indah.");
         models.add(m);
 
         m = new wisataModel();

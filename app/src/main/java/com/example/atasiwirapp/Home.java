@@ -126,7 +126,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         m = new wpModel();
         m.setImg(R.drawable.wisata_pantai_tiga_warna);
-        m.setNama("Pantai Tiga Warnah");
+        m.setNama("Pantai Tiga Warna");
         m.setRating("4.3");
         m.setDesc("Pantai yang memiliki gradasi tiga warna yang disebabkan oleh perbedaan kedalaman permukaannya.");
         models.add(m);
