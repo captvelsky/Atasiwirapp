@@ -64,6 +64,8 @@ public class AddReview extends AppCompatActivity implements View.OnClickListener
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(AddReview.this, "Terima kasih telah memberi ulasan!", Toast.LENGTH_LONG).show();
+                            Intent menuWisata = new Intent(AddReview.this, MenuWisata.class);
+                            startActivity(menuWisata);
                             finish();
                         } else {
                             Toast.makeText(AddReview.this, "Ulasan gagal diberikan", Toast.LENGTH_LONG).show();
